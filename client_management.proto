@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package clientmanagement;
+
+// Le service de gestion des clients
+service ClientManager {
+  // CRUD Operations
+  rpc CreateClient(Client) returns (ClientResponse) {}
+  rpc GetClient(ClientRequest) returns (Client) {}
+  rpc UpdateClient(Client) returns (ClientResponse) {}
+  rpc DeleteClient(ClientRequest) returns (ClientResponse) {}
+}
+
+// Structure d'un client
+message Client {
+  string id = 1;
+  string name = 2;
+  string email = 3;
+}
+
+// Requête pour obtenir ou supprimer un client
+message ClientRequest {
+  string id = 1;
+}
+
+// Réponse du serveur
+message ClientResponse {
+  string message = 1;
+}
