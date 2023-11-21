@@ -1,6 +1,6 @@
 const grpc = require('@grpc/grpc-js');
-const services = require('./clientmanagement_grpc_pb.js');
-const messages = require('./clientmanagement_pb.js');
+const services = require('./generated/client_management_grpc_pb.js');
+const messages = require('./generated/client_management_pb.js');
 
 const client = new services.ClientManagerClient(
   'localhost:50051',

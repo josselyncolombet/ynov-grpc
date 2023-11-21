@@ -1,13 +1,15 @@
 const grpc = require('@grpc/grpc-js');
-const services = require('./clientmanagement_grpc_pb.js');
-const messages = require('./clientmanagement_pb.js');
+const services = require('./generated/client_management_grpc_pb.js');
+const messages = require('./generated/client_management_pb.js');
 
 const clients = {}; // Stockage simple des clients
 
 function createClient(call, callback) {
   const client = call.request;
   clients[client.getId()] = client;
-  callback(null, new messages.ClientResponse({ message: 'Client créé' }));
+  const response = new messages.ClientResponse()
+  response.setMessage('Client créé')
+  callback(null, response);
 }
 
 function getClient(call, callback) {
