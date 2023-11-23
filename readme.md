@@ -3,6 +3,7 @@ installation de nvm : curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.3
 installation de node 14 : nvm install 14.7.0
 downgrade en node 14 : nvm use 14.7.0
 
+npm i -g grpc-tools
 npm i -g grpc
 npm i google-protobuf
 
